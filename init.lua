@@ -36,7 +36,7 @@ for i in ipairs(coral_color) do
    })
 end
 
-minetest.register_abm({
+minetest.register_abm({ --Coral dyes when exposed to air.
    nodenames = {'group:coral'},
    neighbors = {'air'},
    interval = 17,
@@ -44,6 +44,24 @@ minetest.register_abm({
    catch_up = false,
    action = function(pos, node)
       minetest.set_node(pos, {name = 'default:coral_skeleton'})
+   end,
+})
+
+minetest.register_abm({ --Coral can spread, but very slowly.
+   nodenames = {'group:coral'},
+   neighbors = {'group:water'},
+   interval = 500,
+   chance = 25,
+   catch_up = false,
+   action = function(pos, node)
+      local posx = math.random(-1, 1)
+      local posy = math.random(-1, 1)
+      local posz = math.random(-1, 1)
+      local new_pos = {x=pos.x+posx, y=pos.y+posy, z=pos.z+posz}
+      local new_node = minetest.get_node(new_pos).name
+      if minetest.get_item_group(new_node, 'water') > 0 then
+         minetest.set_node(new_pos, {name = node.name})
+      end
    end,
 })
 

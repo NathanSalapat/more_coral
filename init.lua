@@ -36,11 +36,7 @@ for i in ipairs(coral_color) do
    })
 end
 
-<<<<<<< HEAD
-minetest.register_abm({
-=======
 minetest.register_abm({ --Coral dyes when exposed to air.
->>>>>>> f6636f9c133a01f478836f857ec430901f4ff3f7
    nodenames = {'group:coral'},
    neighbors = {'air'},
    interval = 17,
@@ -51,8 +47,6 @@ minetest.register_abm({ --Coral dyes when exposed to air.
    end,
 })
 
-<<<<<<< HEAD
-=======
 minetest.register_abm({ --Coral can spread, but very slowly.
    nodenames = {'group:coral'},
    neighbors = {'group:water'},
@@ -71,7 +65,6 @@ minetest.register_abm({ --Coral can spread, but very slowly.
    end,
 })
 
->>>>>>> f6636f9c133a01f478836f857ec430901f4ff3f7
 minetest.register_decoration({
    name = "default:corals",
    deco_type = "simple",

@@ -25,7 +25,7 @@ for i in ipairs(coral_color) do
       description = Col..' Coral',
       tiles = {'more_coral_coral_base.png^[multiply:'..hex..':100'},
       groups = {cracky = 3, coral = 1},
-      drops = 'default:coral_skeleton',
+      drop = 'default:coral_skeleton',
       sounds = default.node_sound_stone_defaults(),
    })
 
